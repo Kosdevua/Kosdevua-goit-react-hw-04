@@ -1,0 +1,19 @@
+.search_bar_wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: lightskyblue;
+}
+.search_bar_wrapper input {
+  color: black;
+  box-sizing: border-box;
+
+  margin: 10px 0;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: transparent;
+  outline: transparent;
+  min-width: 400px;
+}
+.search_bar_wrapper input::placeholder {
+  color: #8b8b8b;
+}
