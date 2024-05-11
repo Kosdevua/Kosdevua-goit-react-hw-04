@@ -1,8 +1,9 @@
 .search_bar_wrapper {
   display: flex;
   justify-content: center;
-  background-color: lightskyblue;
+  background-color: #96eaff;
 }
+
 .search_bar_wrapper input {
   color: black;
   box-sizing: border-box;
@@ -16,4 +17,9 @@
 }
 .search_bar_wrapper input::placeholder {
   color: #8b8b8b;
+}
+.search_bar_wrapper button {
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: transparent;
 }

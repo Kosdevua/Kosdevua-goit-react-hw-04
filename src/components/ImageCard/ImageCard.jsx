@@ -1,5 +1,17 @@
-const ImageCard = () => {
-  return <div>ImageCard</div>;
+import s from "./ImageCard.module.css";
+const ImageCard = ({ img, openLargeImage }) => {
+  // console.log(img.urls.small);
+  // console.log(img.alt_description);
+  return (
+    <div className={s.image_card}>
+      <img
+        onClick={() => openLargeImage(img.urls.regular)}
+        className={s.image}
+        src={img.urls.small}
+        alt={img.alt_description}
+      />
+    </div>
+  );
 };
 
 export default ImageCard;

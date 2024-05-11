@@ -1,7 +1,8 @@
-// import { CiSearch } from "react-icons/ci";
-
+import { CiSearch } from "react-icons/ci";
 import { useState } from "react";
 import s from "./SearchBar.module.css";
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
 
 const SearchBar = ({ onSubmit }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -9,12 +10,16 @@ const SearchBar = ({ onSubmit }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!searchQuery.trim()) {
-      alert("Please enter a search query.");
+      iziToast.info({
+        message: "Please enter a search query",
+        position: "topLeft",
+      });
       return;
     }
-    onSubmit(searchQuery);
     setSearchQuery("");
+    onSubmit(searchQuery);
   };
+
   const handleChange = (event) => {
     setSearchQuery(event.target.value);
   };
@@ -22,15 +27,18 @@ const SearchBar = ({ onSubmit }) => {
   return (
     <div>
       <header className={s.search_bar_wrapper}>
-        <form onSubmit={handleSubmit}>
+        <form className={s.form_wrapper} onSubmit={handleSubmit}>
+          <button type="submit">
+            <CiSearch />
+          </button>
           <input
+            value={searchQuery}
             type="text"
             autoComplete="off"
             autoFocus
             placeholder="Search images and photos"
             onChange={handleChange}
           />
-          <button type="submit">{/* <CiSearch /> */}Search</button>
         </form>
       </header>
     </div>

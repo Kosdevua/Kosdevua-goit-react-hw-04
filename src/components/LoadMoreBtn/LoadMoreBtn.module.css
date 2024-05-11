@@ -1,0 +1,13 @@
+.load_more_btn_wrapper {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+.load_more_btn {
+  box-sizing: border-box;
+  background-color: #96eaff;
+  padding: 10px 20px;
+  font-size: large;
+  border-radius: 5px;
+  color: rgb(63, 62, 62);
+}

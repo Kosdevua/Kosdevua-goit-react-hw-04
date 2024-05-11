@@ -1,5 +1,15 @@
+import s from "./ErrorMessage.module.css";
+
+import { iziToast } from "izitoast";
 const ErrorMessage = () => {
-  return <div>ErrorMessage</div>;
+  console.log(iziToast);
+  return (
+    <div className={s.error_message_wrapper}>
+      <p className={s.error_message}>
+        Whoops, something went wrong! Please try reloading this page!
+      </p>
+    </div>
+  );
 };
 
 export default ErrorMessage;
