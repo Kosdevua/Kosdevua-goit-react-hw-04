@@ -20,6 +20,7 @@ function App() {
 
   const onSubmit = (searchQuery) => {
     setQuery(searchQuery);
+    setImages([]);
   };
 
   useEffect(() => {
