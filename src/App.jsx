@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import SearchBar from "./components/SearchBar/SearchBar";
 import fetchData from "./components/service/fetchAPI";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
 import Loader from "./components/Loader/Loader";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
-import { ImageModal } from "./components/ImageModal/ImageModal";
+import ImageModal from "./components/ImageModal/ImageModal";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -14,14 +13,10 @@ function App() {
   const [page, setPage] = useState(1);
   const [error, setError] = useState(false);
   const [showBtn, setShowBtn] = useState(false);
-
   const [loading, setLoading] = useState(false);
-
   const [largeImage, setLargeImage] = useState("");
-
   const [desc, setDesc] = useState("");
-
-  // const [loadMore, setLoadMore] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const onSubmit = (searchQuery) => {
     setQuery(searchQuery);
@@ -34,7 +29,6 @@ function App() {
       setLoading(true);
       try {
         const data = await fetchData(query, page);
-        // console.log(total_page);
         setImages((prev) => [...prev, ...data.results]);
 
         setShowBtn(page < data.total_pages);
@@ -50,8 +44,6 @@ function App() {
   const handleLoadMore = () => {
     setPage((prev) => prev + 1);
   };
-
-  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
     setModalIsOpen(true);

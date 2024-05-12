@@ -1,7 +1,5 @@
 import s from "./ImageCard.module.css";
 const ImageCard = ({ img, openLargeImage }) => {
-  // console.log(img.urls.small);
-  // console.log(img.alt_description);
   return (
     <div className={s.image_card}>
       <img
@@ -15,11 +13,3 @@ const ImageCard = ({ img, openLargeImage }) => {
 };
 
 export default ImageCard;
-
-// Картка зображення
-// Компонент ImageCard рендериться в елементі галереї. Створює DOM-елемент наступної структури.
-{
-  /* <div>
-<img src="" alt="" />
-</div> */
-}
